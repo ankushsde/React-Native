@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import FinalResult from './src/Assignment_BoomTv/FinalResultScreen/FinalResult';
 
 export default function App() {
 
-  console.log("hey dude cool")
   return (
     <View style={styles.container}>
-      <Text>OKay It works</Text>
+      <FinalResult/>
+      {/* <Text>OKay It works</Text> */}
       <StatusBar style="auto" />
     </View>
   );
