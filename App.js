@@ -1,15 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import FinalResult from './src/Assignment_BoomTv/FinalResultScreen/FinalResult';
-
+import ToDoScreen from './src/ToDoList/ToDoScreen';
 export default function App() {
 
   return (
-    <View style={styles.container}>
-      <FinalResult/>
-      {/* <Text>OKay It works</Text> */}
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <View >
+        <ToDoScreen />
+       </View>
+    </SafeAreaView>
+
   );
 }
 
