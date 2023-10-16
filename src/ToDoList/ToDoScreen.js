@@ -11,29 +11,27 @@ const ToDoScreen = () => {
   const [editedToDo, setEditedToDo] = useState(null)
 
 
-  // Handle Add To Do 
+  // Handle Add 
   const handleAddToDo = () => {
-    // if (toDo === '') {
-    //   return;
-    // }
+    if (toDo === '') {
+      return;
+    }
     setTodDoList([...toDoList, { id: Date.now().toString(), title: toDo }])
     setToDo('')
   }
-  //handle Delete 
+  //Handle Delete 
   const handleDeleteToDo = (id) => {
-
-   
     const updateToDoList = toDoList.filter((todo) => todo.id !== id)
     setTodDoList(updateToDoList)
   }
 
-  //handle edit
-
+  //Handle Edit 
   const handleEditToDo = (toDo) => {
     setEditedToDo(toDo)
     setToDo(toDo.title)
   }
 
+  //Handle Update 
   const handleUpdateToDo = () => {
     const updateToDos = toDoList.map((item) => {
       if (item.id === editedToDo.id) {
@@ -48,7 +46,7 @@ const ToDoScreen = () => {
     setToDo('')
   }
 
-
+ // Rendering List
   const renderToDos = ({ item, index }) => {
     return (
       <View style={{
@@ -81,16 +79,14 @@ const ToDoScreen = () => {
           borderRadius: 4,
           paddingVertical: 8,
           paddingHorizontal: 16,
-
         }}
         placeholder='Add a task'
         value={toDo}
         onChangeText={(userText) => setToDo(userText)}
       />
-
-
       {
-        editedToDo ? <TouchableOpacity
+        editedToDo ? 
+         <TouchableOpacity
           style={{
             backgroundColor: 'black',
             borderRadius: 6,
@@ -108,8 +104,8 @@ const ToDoScreen = () => {
               fontWeight: 'bold'
             }}
           >Save</Text>
-        </TouchableOpacity> :
-
+         </TouchableOpacity> 
+         :
           <TouchableOpacity
             style={{
               backgroundColor: 'black',
