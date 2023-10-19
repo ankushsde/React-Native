@@ -7,12 +7,12 @@ const product = (props) => {
 
     const item = props.item
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
 
     const handleAddToCart = (item) => {
-        console.log("called",item)
-        // dispatch()
+        console.log("called",item);
+        dispatch(addToCart(item));
     }
 
     return (

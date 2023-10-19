@@ -5,6 +5,16 @@ import ToDoScreen from './src/ToDoList/ToDoScreen';
 import Header from './src/ShhoppingCart/header';
 import Product from './src/ShhoppingCart/product';
 import { Button } from 'react-native-paper';
+import { Provider } from 'react-redux';
+import store from './Services/Redux/store';
+
+
+const AppRedux = ( ) => {
+ <Provider store={store}>
+   <App/>
+ </Provider>
+
+}
 
 export default function App() {
   const products = [
